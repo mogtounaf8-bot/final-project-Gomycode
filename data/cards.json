@@ -1,0 +1,9 @@
+[
+  { "name": "banana", "image": "banana.png" },
+  { "name": "blueberry", "image": "blueberry.png" },
+  { "name": "cherry", "image": "cherry.png" },
+  { "name": "coconut", "image": "coconut.png" },
+  { "name": "strawberry", "image": "strawberry.png" },
+  { "name": "appled", "image": "appled.png" },
+  { "name": "raspberry", "image": "raspberry.png" }
+]
