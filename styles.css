@@ -1,78 +1,106 @@
 body {
     min-height: 100vh;
-    min-width: 100vw;
     background-color: #160101;
     color: #fff;
+    font-family: Arial, sans-serif;
 }
-h1{ 
+h1 {
     text-align: center;
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 50px;
 }
-p{
+p {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    margin: 8px 0;
 }
-.actions{
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.actions {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin: 20px 0;
 }
-.actions button{
+.actions button {
     padding: 8px 16px;
     font-size: 30px;
     border-radius: 10px;
     background-color: #fff;
-    color: white
+    color: #160101;
+    border: none;
+    cursor: pointer;
 }
 .win-message {
     color: #4caf50;
     min-height: 40px;
 }
-.grid-container{
-    display: grid;
-    grid-template-rows: repeat(4, 150px);
-    grid-template-columns: repeat(4, calc(140px/ 2 * 3));
-    grid-gap: 16px;
+.feedback {
+    color: #ffb347;
+    min-height: 40px;
 }
-
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 130px);
+    grid-auto-rows: 130px;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px auto;
+}
 .card {
-    height: calc(140px/ 2 * 3);
-    width: calc(140px/ 2 * 3);
+    height: 130px;
+    width: 130px;
     border-radius: 10px;
     background-color: #fff;
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
-.front-image{
-    
-    width: 60px;
-    height: 60px;
-    
+.front-image {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
 }
 .card.flipped {
     transform: rotateY(180deg);
 }
-.back {
+.card .front {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    
-}
-.card .front {
     display: flex;
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
     background-image: linear-gradient(135deg, #ff5b5b, #ffb347);
-    background-position: center;
-    background-size: cover;
     backface-visibility: hidden;
+}
+@media (max-width: 1050px) {
+    .grid-container { grid-template-columns: repeat(4, 110px); grid-auto-rows: 110px; gap: 10px; }
+    .card { width: 110px; height: 110px; }
+    .front-image { width: 70px; height: 70px; }
+    h1 { font-size: 32px; }
+    p { font-size: 22px; }
+}
+@media (max-width: 480px) {
+    .grid-container { grid-template-columns: repeat(4, 75px); grid-auto-rows: 75px; gap: 8px; }
+    .card { width: 75px; height: 75px; }
+    .front-image { width: 50px; height: 50px; }
 }
